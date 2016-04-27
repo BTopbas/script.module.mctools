@@ -1325,8 +1325,8 @@ def integration(titles=[], id=[], magnets=[], typeList='', folder='', typeVideo=
                                 text_file.write("http://www.imdb.com/title/%s/" % codeMovie)
                             settings.debug("imdb= " + codeMovie)
                         else:
-                            with open(path.join(directory, "tvshow.nfo"), "w") as text_file:  # create .nfo SHOW
-                                text_file.write("http://thetvdb.com/?tab=series&id=%s" % codeShow)
+                            with open(path.join(directory, "zz"), "w") as text_file:  # create .nfo SHOW
+                                text_file.write("zz")
                             settings.debug("tvdb= " + codeShow)
 
                     if not silence: settings.pDialog.update(int(float(cm) / total * 100), settings.string(32036)
@@ -1457,8 +1457,8 @@ def subscription(titles=[], id=[], typeList='', folder='', silence=False, messag
                     settings.log(settings.string(32035) % (typeList, data['ID']))
                     settings.log(
                         '%s %s-%s: %s' % (item, data['firstSeason'], data['lastSeason'], data['lastEpisode']))
-                with open(path.join(directory, "tvshow.nfo"), "w") as text_file:  # create .nfo SHOW
-                    text_file.write("http://thetvdb.com/?tab=series&id=%s" % data['ID'])
+                with open(path.join(directory, "zz"), "w") as text_file:  # create .nfo SHOW
+                    text_file.write("zz")
                 for season in range(max(data['season'], data['firstSeason']), data['lastSeason'] + 1):
                     if data['lastEpisode'].has_key(season):
                         for episode in range(data['episode'] + 1, data['lastEpisode'][season] + 1):
